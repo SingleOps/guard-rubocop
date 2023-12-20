@@ -13,7 +13,7 @@ module Guard
 
       def run(paths = [])
         command = build_command(paths)
-        passed = system(*command)
+        passed = system(command.join(' '))
 
         case @options[:notification]
         when :failed
